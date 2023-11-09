@@ -89,7 +89,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 728485478304635869}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.28206745, w: 0.95939463}
+  m_LocalRotation: {x: 0, y: 0, z: 0.2820683, w: 0.95939434}
   m_LocalPosition: {x: 0.10552364, y: -0.00000041490878, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -155,7 +155,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1110166284770759884}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.043691512, w: 0.9990451}
+  m_LocalRotation: {x: -0, y: -0, z: 0.043690003, w: 0.9990452}
   m_LocalPosition: {x: 0.079, y: 0.001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -213,7 +213,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0.10033767, y: -0.0024094547}
-  m_Radius: 0.09488037
+  m_Radius: 0.102104165
 --- !u!1 &1400893061084528805
 GameObject:
   m_ObjectHideFlags: 0
@@ -238,7 +238,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1400893061084528805}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.85151166, w: 0.52433556}
+  m_LocalRotation: {x: 0, y: 0, z: -0.85151273, w: 0.524334}
   m_LocalPosition: {x: 0.07135673, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -270,7 +270,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1713639869821920815}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.16791824, w: 0.985801}
+  m_LocalRotation: {x: 0, y: 0, z: 0.16792025, w: 0.9858006}
   m_LocalPosition: {x: 0.11437379, y: 0.00000080591934, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -361,7 +361,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0.9
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -369,7 +369,7 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
@@ -390,6 +390,7 @@ MonoBehaviour:
   frontTire: {fileID: 3642374055482085706}
   speed: 150
   carTorque: 150
+  score: 0
 --- !u!235 &7928937733790395549
 WheelJoint2D:
   m_ObjectHideFlags: 0
@@ -499,7 +500,7 @@ Transform:
   m_GameObject: {fileID: 2769750669703211521}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.02, y: 0.132, z: 0}
+  m_LocalPosition: {x: 0.016, y: 0.164, z: 0}
   m_LocalScale: {x: 0.79999995, y: 0.79999995, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -551,7 +552,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -3
   m_Sprite: {fileID: 21300000, guid: adafefb8d1d358b419d0df13c45ade0c, type: 3}
-  m_Color: {r: 0.6424316, g: 0.63584906, b: 1, a: 1}
+  m_Color: {r: 0.3148808, g: 0.6886733, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -676,7 +677,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3045215321432389717}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0, z: 0.78329027, w: -0.6216562}
+  m_LocalRotation: {x: -0, y: 0, z: 0.7832918, w: -0.6216542}
   m_LocalPosition: {x: 0.07737576, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -775,7 +776,7 @@ Transform:
   m_GameObject: {fileID: 3471731825189491976}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.387, y: -0.294, z: 0}
+  m_LocalPosition: {x: -0.387, y: -0.313, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -856,7 +857,7 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
@@ -895,7 +896,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.255
+  m_Radius: 0.265
 --- !u!1 &3535657314243428477
 GameObject:
   m_ObjectHideFlags: 0
@@ -951,7 +952,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3731534125469110612}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.045829203, w: 0.99894935}
+  m_LocalRotation: {x: 0, y: 0, z: -0.045826655, w: 0.99894947}
   m_LocalPosition: {x: 0.12437642, y: -5.1479343e-10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -985,7 +986,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4217551704347848991}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.32198426, w: 0.94674504}
+  m_LocalRotation: {x: -0, y: -0, z: 0.32198337, w: 0.94674534}
   m_LocalPosition: {x: 0.12122753, y: 0.002116617, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1016,7 +1017,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4218238367215233172}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.7291125, w: 0.6843939}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7291118, w: 0.68439466}
   m_LocalPosition: {x: -0.004949056, y: -0.0013798422, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1212,7 +1213,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7672119412198210467}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.25147596, w: 0.9678636}
+  m_LocalRotation: {x: -0, y: -0, z: 0.2514755, w: 0.96786374}
   m_LocalPosition: {x: 0.12523754, y: 0.0030558174, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1459,7 +1460,7 @@ Transform:
   m_GameObject: {fileID: 8664832474447669252}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.409, y: -0.294, z: 0}
+  m_LocalPosition: {x: 0.409, y: -0.31299993, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1540,7 +1541,7 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
@@ -1579,7 +1580,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.255
+  m_Radius: 0.265
 --- !u!1 &8769388576905831364
 GameObject:
   m_ObjectHideFlags: 0

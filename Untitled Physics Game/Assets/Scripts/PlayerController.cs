@@ -33,12 +33,27 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        backTire.AddTorque(-movement * speed * Time.fixedDeltaTime);
+        backTire.AddTorque(-movement * speed * Time.fixedDeltaTime); ;
         frontTire.AddTorque(-movement * speed * Time.fixedDeltaTime);
         rb.AddTorque(movement * carTorque * Time.fixedDeltaTime);
     }
 
     public void Die()
+    {
+        StartCoroutine(DieTimer());
+    }
+
+    IEnumerator DieTimer()
+    {
+        Time.timeScale = 0.25f;
+
+        yield return new WaitForSeconds(1f);
+
+        Time.timeScale = 1f;
+        Restart();
+    }
+
+    private void Restart()
     {
         SceneManager.LoadScene(0);
     }
