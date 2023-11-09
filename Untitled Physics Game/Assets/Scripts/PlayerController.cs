@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -32,5 +33,10 @@ public class PlayerController : MonoBehaviour
         backTire.AddTorque(-movement * speed * Time.fixedDeltaTime);
         frontTire.AddTorque(-movement * speed * Time.fixedDeltaTime);
         rb.AddTorque(movement * carTorque * Time.fixedDeltaTime);
+    }
+
+    public void Die()
+    {
+        SceneManager.LoadScene(0);
     }
 }

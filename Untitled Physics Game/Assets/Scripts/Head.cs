@@ -11,7 +11,7 @@ public class Head : MonoBehaviour
     {
         if (((1 << collision.gameObject.layer) & collisionMask) != 0)
         {
-            // Do stuff
+            player.Die();
         }
     }
 }
