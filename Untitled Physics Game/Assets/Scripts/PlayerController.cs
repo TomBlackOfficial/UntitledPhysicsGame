@@ -13,6 +13,9 @@ public class PlayerController : MonoBehaviour
     public float speed = 100;
     public float carTorque = 30;
 
+    //ABHI: added int variale to keep track of score
+    public int score = 0;
+
     private float movement;
 
     private void Awake()
