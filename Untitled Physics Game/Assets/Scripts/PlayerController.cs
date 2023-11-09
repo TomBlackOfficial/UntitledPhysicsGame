@@ -6,23 +6,31 @@ public class PlayerController : MonoBehaviour
 {
     public bool isPlayer1;
 
+    private Rigidbody2D rb;
     public Rigidbody2D backTire;
     public Rigidbody2D frontTire;
-    public float speed = 50;
+    public float speed = 100;
+    public float carTorque = 30;
 
     private float movement;
+
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
 
     private void Update()
     {
         if (isPlayer1)
-            movement = Input.GetAxis("Horizontal_P1");
+            movement = Input.GetAxisRaw("Horizontal_P1");
         else
-            movement = Input.GetAxis("Horizontal_P2");
+            movement = Input.GetAxisRaw("Horizontal_P2");
     }
 
     private void FixedUpdate()
     {
         backTire.AddTorque(-movement * speed * Time.fixedDeltaTime);
         frontTire.AddTorque(-movement * speed * Time.fixedDeltaTime);
+        rb.AddTorque(movement * carTorque * Time.fixedDeltaTime);
     }
 }
