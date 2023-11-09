@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class LevelScript : MonoBehaviour
 {
-    public Vector3 p1SpawnPoint, p2SpawnPoint;
+    public Transform p1SpawnPoint, p2SpawnPoint;
 }

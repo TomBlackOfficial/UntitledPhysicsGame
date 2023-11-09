@@ -10,6 +10,9 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D frontTire;
     public float speed = 50;
 
+    //ABHI: added int variale to keep track of score
+    public int score = 0;
+
     private float movement;
 
     private void Update()

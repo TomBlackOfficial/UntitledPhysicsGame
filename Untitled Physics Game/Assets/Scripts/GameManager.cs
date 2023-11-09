@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -10,31 +11,46 @@ public class GameManager : SingletonTemplate<GameManager>
     //round end : update score : show lvl end ui : instant replay?
 
     #region Variables
+    [Header("Level")]
     public List<GameObject> levelPrefabs = new List<GameObject>();
-    public GameObject roundStartUI, roundEndUI, roundUI;
-    public GameObject p1Vehicle, p2Vehicle;
+    public GameObject currentLevel;
     public int numberOfLevels = 9;
+
+    [Header("UI")]
+    public GameObject roundStartUI, roundEndUI, roundPlayingUI;
+
+    [Header("Players")]
+    public GameObject p1Vehicle, p2Vehicle;
+    private PlayerController pc1, pc2;
 
     public enum LEVEL_STATE
     {
+        START_GAME,
         ROUND_START,
         ROUND_PLAYING,
-        ROUND_END
+        ROUND_END,
+        GAME_OVER
     }
     public LEVEL_STATE currentState {  get; private set; }
+    private Coroutine state;
     #endregion
+
+    private void Awake()
+    {
+        InitializeLevels();
+        InitializePlayers();
+        InitializeUI();
+    }
 
     private void Start()
     {
-        ClearScreen();
-       // InitializePlayers();
-       // InitializeLevels();
-       // InitializeUI();
+        LoadNewLevel();
 
-        //RoundStart
-        //ChangeLevelState(LEVEL_STATE.ROUND_START);
+        Instantiate(roundStartUI);
+        Instantiate(roundPlayingUI);
+        Instantiate(roundEndUI);
 
-        //IncreaseScore();
+        ActivateUI(roundStartUI);
     }
 
     private void InitializePlayers()
@@ -45,35 +61,46 @@ public class GameManager : SingletonTemplate<GameManager>
     
     private void InitializeUI()
     {
-        roundStartUI = Resources.Load("UI/roundStartUI") as GameObject;
-        roundUI = Resources.Load("UI/roundUI") as GameObject;
-        roundEndUI = Resources.Load("UI/roundEndUI") as GameObject;
+        roundStartUI = Resources.Load<GameObject>("UI/RoundStartUI");
+        roundPlayingUI = Resources.Load<GameObject>("UI/RoundPlayingUI");
+        roundEndUI = Resources.Load<GameObject>("UI/RoundEndUI");
     }
 
     private void InitializeLevels()
     {
+        GameObject[] levels = Resources.LoadAll<GameObject>("Levels");
+        numberOfLevels = levels.Length;
+
         for(int i = 0; i < numberOfLevels; i++)
         {
-            levelPrefabs.Add(Resources.Load($"Levels/level{i}") as GameObject);
+            levelPrefabs.Add(levels[i]);            
         }        
     }
 
-    public void LoadNewLevel()
+    private void LoadNewLevel()
     {
+        if(pc2)
+        {
+            Destroy(pc1.gameObject);
+        }
+        if(pc1)
+        {
+            Destroy(pc2.gameObject);
+        }
+        if(currentLevel)
+        {
+            Destroy(currentLevel);
+        }
+
+        //PlayerController[] players = FindObjectsByType<PlayerController>(FindObjectsSortMode.None);
         int levelToLoad = Random.Range(0, levelPrefabs.Count);
-        Instantiate(levelPrefabs[levelToLoad]);
-
-        Instantiate(p1Vehicle, levelPrefabs[levelToLoad].GetComponent<LevelScript>().p1SpawnPoint, Quaternion.identity);
-        Instantiate(p2Vehicle, levelPrefabs[levelToLoad].GetComponent<LevelScript>().p2SpawnPoint, Quaternion.identity);
-
+        currentLevel = Instantiate(levelPrefabs[levelToLoad]);
         levelPrefabs.RemoveAt(levelToLoad);
-    }
 
-    private void ClearScreen()
-    {
-        PlayerController[] players = FindObjectsByType<PlayerController>(FindObjectsSortMode.None);
-        print(players[0].gameObject.name);
-        print(players[1].gameObject.name);
+        Instantiate(p1Vehicle, levelPrefabs[levelToLoad].GetComponent<LevelScript>().p1SpawnPoint.position, Quaternion.identity);
+        p1Vehicle.TryGetComponent(out pc1);
+        Instantiate(p2Vehicle, levelPrefabs[levelToLoad].GetComponent<LevelScript>().p2SpawnPoint.position, Quaternion.identity);
+        p2Vehicle.TryGetComponent(out pc2);
     }
 
     public void ChangeLevelState(LEVEL_STATE levelState)
@@ -87,7 +114,8 @@ public class GameManager : SingletonTemplate<GameManager>
             break;
 
             case LEVEL_STATE.ROUND_PLAYING:
-                ActivateUI(roundUI); 
+                ActivateUI(roundPlayingUI);
+                StopCoroutine(state);
             break;
 
             case LEVEL_STATE.ROUND_END:
@@ -99,7 +127,7 @@ public class GameManager : SingletonTemplate<GameManager>
     private void ActivateUI(GameObject UIToActivate)
     {
         roundStartUI.SetActive(false);
-        roundUI.SetActive(false);
+        roundPlayingUI.SetActive(false);
         roundEndUI.SetActive(false);
 
         UIToActivate.SetActive(true);
@@ -107,13 +135,41 @@ public class GameManager : SingletonTemplate<GameManager>
 
     private void StartCountdown()
     {
-        //TODO
-        ChangeLevelState(LEVEL_STATE.ROUND_PLAYING);
+        TextMeshProUGUI countdown = GameObject.Find("Countdown").GetComponent<TextMeshProUGUI>();
+        state = StartCoroutine(Countown(countdown));
     }
 
-    private void PlayerScored(GameObject player)
+    private IEnumerator Countown(TextMeshProUGUI countdown)
     {
-        //TODO
-        ChangeLevelState(LEVEL_STATE.ROUND_END);
+        int time = 3, timeToWait = 1;
+        while(time > 0)
+        {
+            countdown.text = time.ToString();
+            time--;
+            yield return new WaitForSeconds(timeToWait);
+        }
+    }
+
+    private void PlayerScored(PlayerController pc)
+    {
+        pc.score++;
+        CheckWinCondition();
+    }
+
+    private void CheckWinCondition()
+    {
+        if(pc1.score >= 5)
+        {
+            GameOver(pc1);
+        }
+        else if(pc2.score >= 5)
+        {
+            GameOver(pc2);
+        }
+    }
+
+    private void GameOver(PlayerController winner)
+    {
+        //ChangeLevelState()
     }
 }
