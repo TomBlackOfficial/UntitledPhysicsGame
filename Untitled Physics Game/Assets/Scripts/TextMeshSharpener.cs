@@ -1,9 +1,11 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TextMeshSharpener : MonoBehaviour
 {
     public static event Action<string> buttonPressed;
+    public static event Action<string, TextMesh> buttonHover;
 
     private void OnMouseDown()
     {
@@ -34,6 +36,11 @@ public class TextMeshSharpener : MonoBehaviour
     {
         // Always resize in the editor, or when playing the game, only when the resolution changes
         if (Camera.main.pixelHeight != lastPixelHeight || (Application.isEditor && !Application.isPlaying)) resize();
+    }
+
+    private void OnMouseOver()
+    {
+        buttonHover?.Invoke(text, textMesh);
     }
 
     private void resize()
