@@ -14,7 +14,8 @@ public class GameManager : SingletonTemplate<GameManager>
     [Header("Level")]
     public List<GameObject> levelPrefabs = new List<GameObject>();
     public GameObject currentLevel;
-    public int numberOfLevels = 9;
+    private Vector2 originalGravity;
+    private int numberOfLevels;
 
     [Header("UI")]
     public GameObject roundStartUI;
@@ -26,6 +27,9 @@ public class GameManager : SingletonTemplate<GameManager>
     [Header("Players")]
     public GameObject p1Vehicle, p2Vehicle;
     private PlayerController pc1, pc2;
+
+    private bool canChangeColor = true;
+    private float colorChangeTime = 1f;
 
     public enum LEVEL_STATE
     {
@@ -42,11 +46,13 @@ public class GameManager : SingletonTemplate<GameManager>
     private void OnEnable()
     {
         TextMeshSharpener.buttonPressed += OnButtonPressed;
+        TextMeshSharpener.buttonHover += MouseOver;
     }
 
     private void OnDisable()
     {
         TextMeshSharpener.buttonPressed -= OnButtonPressed;
+        TextMeshSharpener.buttonHover -= MouseOver;
     }
 
     private void OnButtonPressed(string buttonName)
@@ -68,6 +74,49 @@ public class GameManager : SingletonTemplate<GameManager>
                 break;
         }
     }
+    
+    private void MouseOver(string buttonName, TextMesh textMesh)
+    {
+        switch(buttonName)
+        {
+            default:
+                if (canChangeColor)
+                {
+                    StartCoroutine(ColorChange());
+                    textMesh.color = Random.ColorHSV(0, 1, 1, 1, 1, 1);
+                }
+                break;
+            case ("play"):
+                if (canChangeColor)
+                {
+                    StartCoroutine(ColorChange());
+                    textMesh.color = Random.ColorHSV(0, .33f, 1, 1, 1, 1);
+                }
+                break;
+            case ("credits"):
+                if (canChangeColor)
+                {
+                    StartCoroutine(ColorChange());
+                    textMesh.color = Random.ColorHSV(.33f, .66f, 1, 1, 1, 1);
+                }
+                break;
+            case ("quit"):
+                if (canChangeColor)
+                {
+                    StartCoroutine(ColorChange());
+                    textMesh.color = Random.ColorHSV(.66f, 1, 1, 1, 1, 1);
+                }
+                break;
+        }
+    }
+
+    private IEnumerator ColorChange()
+    {
+        yield return null;
+        canChangeColor = false;
+        yield return new WaitForSeconds(colorChangeTime);
+        canChangeColor = true;
+    }
 
     protected override void Awake()
     {
@@ -79,7 +128,7 @@ public class GameManager : SingletonTemplate<GameManager>
 
     private void Start()
     {
-        
+        originalGravity = Physics2D.gravity;
     }
 
     private void Update()
@@ -89,6 +138,7 @@ public class GameManager : SingletonTemplate<GameManager>
 
     public void Play()
     {
+        Physics2D.gravity = originalGravity; 
         mainMenu.SetActive(false);
         LoadNewLevel();
 

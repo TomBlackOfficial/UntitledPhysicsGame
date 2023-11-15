@@ -188,7 +188,10 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      CAR ONE MOBILE_0: 4624442910625368962
+      CAR ONE MOBILE_1: -7917927798676837966
+      CAR ONE MOBILE_2: -2863843817331160896
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

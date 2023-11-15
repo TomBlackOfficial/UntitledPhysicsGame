@@ -188,7 +188,10 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      CAR ONE ENEMY MOBILE_0: 5706007115106766884
+      CAR ONE ENEMY MOBILE_1: -5177664855404216239
+      CAR ONE ENEMY MOBILE_2: 6535033286801692768
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
