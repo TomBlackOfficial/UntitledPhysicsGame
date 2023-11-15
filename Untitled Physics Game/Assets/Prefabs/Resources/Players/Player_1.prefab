@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 910763352857764518}
   - component: {fileID: 6513788840623463800}
   - component: {fileID: 2732430665280386119}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,9 +175,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 6126952352888884365}
-  collisionMask:
-    serializedVersion: 2
-    m_Bits: 8
+  collidersToIgnore:
+  - {fileID: 2732430665280386119}
+  - {fileID: 1543282201649464517}
+  - {fileID: 4228542310128006711}
+  - {fileID: 3431895214510910095}
 --- !u!58 &2732430665280386119
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -388,8 +390,8 @@ MonoBehaviour:
   isPlayer1: 1
   backTire: {fileID: 7192870339047162007}
   frontTire: {fileID: 3642374055482085706}
-  speed: 150
-  carTorque: 150
+  speed: 175
+  carTorque: 200
   score: 0
 --- !u!235 &7928937733790395549
 WheelJoint2D:
