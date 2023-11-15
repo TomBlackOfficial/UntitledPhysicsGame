@@ -18,6 +18,7 @@ public class GameManager : SingletonTemplate<GameManager>
 
     [Header("UI")]
     public GameObject roundStartUI, roundEndUI, roundPlayingUI, credits, mainMenu;
+    public TextMeshProUGUI p1Score, p2Score;
 
     [Header("Players")]
     public GameObject p1Vehicle, p2Vehicle;
@@ -38,11 +39,13 @@ public class GameManager : SingletonTemplate<GameManager>
     private void OnEnable()
     {
         TextMeshSharpener.buttonPressed += OnButtonPressed;
+        PlayerController.playerDead += PlayerDied;
     }
 
     private void OnDisable()
     {
         TextMeshSharpener.buttonPressed -= OnButtonPressed;
+        PlayerController.playerDead -= PlayerDied;
     }
 
     private void OnButtonPressed(string buttonName)
@@ -202,10 +205,20 @@ public class GameManager : SingletonTemplate<GameManager>
         }
     }
 
-    private void PlayerScored(PlayerController pc)
+    private void PlayerDied(PlayerController pc)
     {
-        pc.score++;
-        CheckWinCondition();
+        if(pc.isPlayer1)
+        {
+            pc1.score++;
+            p1Score.text = pc1.score.ToString();
+            CheckWinCondition();
+        }
+        else
+        {
+            pc2.score++;
+            p2Score.text = pc2.score.ToString();
+            CheckWinCondition();
+        }        
     }
 
     private void CheckWinCondition()
@@ -222,6 +235,13 @@ public class GameManager : SingletonTemplate<GameManager>
 
     private void GameOver(PlayerController winner)
     {
-        //ChangeLevelState()
+        if(winner.isPlayer1)
+        {
+            print("Player 1 Wins!");
+        }
+        else
+        {
+            print("Player 2 Wins!");
+        }
     }
 }

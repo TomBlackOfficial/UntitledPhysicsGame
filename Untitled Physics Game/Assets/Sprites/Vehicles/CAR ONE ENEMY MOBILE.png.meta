@@ -1,13 +1,16 @@
 fileFormatVersion: 2
-guid: b5ab3411eda787c459a2520942b8f4e2
+guid: bd6ccf1dcc3ef85448ee9f4cd5f86309
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4756918876671750768
-    second: water layer 2_0
+      213: 5706007115106766884
+    second: CAR ONE ENEMY MOBILE_0
   - first:
-      213: -3739914098776302011
-    second: water layer 2_1
+      213: -5177664855404216239
+    second: CAR ONE ENEMY MOBILE_1
+  - first:
+      213: 6535033286801692768
+    second: CAR ONE ENEMY MOBILE_2
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -86,7 +89,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Standalone
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -98,7 +101,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: WebGL
+    buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -113,13 +116,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: water layer 2_0
+      name: CAR ONE ENEMY MOBILE_0
       rect:
         serializedVersion: 2
-        x: 2099
-        y: 1752
-        width: 43
-        height: 21
+        x: 83
+        y: 1477
+        width: 4226
+        height: 2421
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,20 +130,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 09d41a22c770cfdb0800000000000000
-      internalID: -4756918876671750768
+      spriteID: 4205acd4d3fcf2f40800000000000000
+      internalID: 5706007115106766884
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: water layer 2_1
+      name: CAR ONE ENEMY MOBILE_1
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 8353
-        height: 1564
+        width: 1441
+        height: 1441
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -148,8 +151,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 54e96fb21f7291cc0800000000000000
-      internalID: -3739914098776302011
+      spriteID: 1508b971f3d3528b0800000000000000
+      internalID: -5177664855404216239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CAR ONE ENEMY MOBILE_2
+      rect:
+        serializedVersion: 2
+        x: 3124
+        y: 31
+        width: 1081
+        height: 1081
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0681b27762a11ba50800000000000000
+      internalID: 6535033286801692768
       vertices: []
       indices: 
       edges: []
@@ -164,9 +188,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      water layer 2_0: -4756918876671750768
-      water layer 2_1: -3739914098776302011
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

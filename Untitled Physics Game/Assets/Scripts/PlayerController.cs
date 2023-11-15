@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,6 +16,7 @@ public class PlayerController : MonoBehaviour
 
     //ABHI: added int variale to keep track of score
     public int score = 0;
+    public static event Action<PlayerController> playerDead;
 
     private float movement;
 
@@ -40,6 +42,7 @@ public class PlayerController : MonoBehaviour
 
     public void Die()
     {
+        playerDead?.Invoke(this);
         StartCoroutine(DieTimer());
     }
 
