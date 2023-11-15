@@ -17,7 +17,11 @@ public class GameManager : SingletonTemplate<GameManager>
     public int numberOfLevels = 9;
 
     [Header("UI")]
-    public GameObject roundStartUI, roundEndUI, roundPlayingUI, credits, mainMenu;
+    public GameObject roundStartUI;
+    public GameObject roundEndUI;
+    public GameObject roundPlayingUI;
+    public GameObject credits;
+    public GameObject mainMenu;
 
     [Header("Players")]
     public GameObject p1Vehicle, p2Vehicle;

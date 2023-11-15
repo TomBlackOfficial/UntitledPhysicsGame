@@ -5,13 +5,15 @@ using UnityEngine;
 public class Head : MonoBehaviour
 {
     [SerializeField] private PlayerController player;
-    [SerializeField] private LayerMask collisionMask;
+    [SerializeField] private List<Collider2D> collidersToIgnore = new List<Collider2D>();
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (((1 << collision.gameObject.layer) & collisionMask) != 0)
+        if (collidersToIgnore.Contains(collision.collider))
         {
-            player.Die();
+            return;
         }
+
+        player.Die();
     }
 }
