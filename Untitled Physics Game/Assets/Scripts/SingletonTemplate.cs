@@ -6,7 +6,7 @@ public class SingletonTemplate<T> : MonoBehaviour where T : SingletonTemplate<T>
 {
     public static T instance;
 
-    protected void Awake()
+    protected virtual void Awake()
     {
         if(instance == null)
         {

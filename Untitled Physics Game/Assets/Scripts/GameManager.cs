@@ -17,7 +17,7 @@ public class GameManager : SingletonTemplate<GameManager>
     public int numberOfLevels = 9;
 
     [Header("UI")]
-    public GameObject roundStartUI, roundEndUI, roundPlayingUI;
+    public GameObject roundStartUI, roundEndUI, roundPlayingUI, credits, mainMenu;
 
     [Header("Players")]
     public GameObject p1Vehicle, p2Vehicle;
@@ -35,8 +35,39 @@ public class GameManager : SingletonTemplate<GameManager>
     private Coroutine state;
     #endregion
 
-    private void Awake()
+    private void OnEnable()
     {
+        TextMeshSharpener.buttonPressed += OnButtonPressed;
+    }
+
+    private void OnDisable()
+    {
+        TextMeshSharpener.buttonPressed -= OnButtonPressed;
+    }
+
+    private void OnButtonPressed(string buttonName)
+    {
+        switch(buttonName)
+        {
+            default:
+                Vector2 tempGrav = Physics2D.gravity;
+                Physics2D.gravity = -tempGrav;
+                break;
+            case ("play"):
+                Play();
+                break;
+            case ("credits"):
+                ToggleCredits();
+                break;
+            case ("quit"):
+                Quit();
+                break;
+        }
+    }
+
+    protected override void Awake()
+    {
+        base.Awake();
         InitializeLevels();
         InitializePlayers();
         InitializeUI();
@@ -44,13 +75,34 @@ public class GameManager : SingletonTemplate<GameManager>
 
     private void Start()
     {
+        
+    }
+
+    private void Update()
+    {
+
+    }
+
+    public void Play()
+    {
+        mainMenu.SetActive(false);
         LoadNewLevel();
 
-        Instantiate(roundStartUI);
+        //Instantiate(roundStartUI);
         Instantiate(roundPlayingUI);
         Instantiate(roundEndUI);
 
         ActivateUI(roundStartUI);
+    }
+
+    public void ToggleCredits()
+    {
+        credits.SetActive(!credits.activeInHierarchy);
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
     }
 
     private void InitializePlayers()
