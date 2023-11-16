@@ -10,7 +10,7 @@ public class ScorePanel : MonoBehaviour
 
     [SerializeField] Image[] stars;
 
-    private int score = 0;
+    public int score = 0;
 
     public void AddScore()
     {

@@ -1,12 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : SingletonTemplate<GameManager>
 {
-    //start and lvl over : create random lvl. remove said lvl from list.
+    //start and lvl over : create UnityEngine.Random lvl. remove said lvl from list.
     //round start : vehicle selection : countdown : hide ui
     //round end : update score : show lvl end ui : instant replay?
 
@@ -18,19 +20,22 @@ public class GameManager : SingletonTemplate<GameManager>
     private int numberOfLevels;
 
     [Header("UI")]
-    public GameObject roundStartUI;
-    public GameObject roundEndUI;
-    public GameObject roundPlayingUI;
     public GameObject credits;
     public GameObject rules;
     public GameObject mainMenu;
+    public GameObject gameOver;
 
     [Header("Players")]
-    public GameObject p1Vehicle, p2Vehicle;
+    public GameObject p1, p2;
     private PlayerController pc1, pc2;
+    public ScorePanel p1ScorePanel, p2ScorePanel;
+    private List<GameObject> p1List = new List<GameObject>();
+    private List<GameObject> p2List = new List<GameObject>();
 
     private bool canChangeColor = true;
     private float colorChangeTime = 1f;
+    public static event Action<bool> onGameOver;
+    private bool isGameOver;
 
     public enum LEVEL_STATE
     {
@@ -48,12 +53,14 @@ public class GameManager : SingletonTemplate<GameManager>
     {
         TextMeshSharpener.buttonPressed += OnButtonPressed;
         TextMeshSharpener.buttonHover += MouseOver;
+        PlayerController.playerDead += PlayerDied;
     }
 
     private void OnDisable()
     {
         TextMeshSharpener.buttonPressed -= OnButtonPressed;
         TextMeshSharpener.buttonHover -= MouseOver;
+        PlayerController.playerDead -= PlayerDied;
     }
 
     private void OnButtonPressed(string buttonName)
@@ -87,35 +94,35 @@ public class GameManager : SingletonTemplate<GameManager>
                 if (canChangeColor)
                 {
                     StartCoroutine(ColorChange());
-                    textMesh.color = Random.ColorHSV(0, 1, 1, 1, 1, 1);
+                    textMesh.color = UnityEngine.Random.ColorHSV(0, 1, 1, 1, 1, 1);
                 }
                 break;
             case ("play"):
                 if (canChangeColor)
                 {
                     StartCoroutine(ColorChange());
-                    textMesh.color = Random.ColorHSV(0, .25f, 1, 1, 1, 1);
+                    textMesh.color = UnityEngine.Random.ColorHSV(0, .25f, 1, 1, 1, 1);
                 }
                 break;
             case ("credits"):
                 if (canChangeColor)
                 {
                     StartCoroutine(ColorChange());
-                    textMesh.color = Random.ColorHSV(.25f, .5f, 1, 1, 1, 1);
+                    textMesh.color = UnityEngine.Random.ColorHSV(.25f, .5f, 1, 1, 1, 1);
                 }
                 break;
             case ("rules"):
                 if (canChangeColor)
                 {
                     StartCoroutine(ColorChange());
-                    textMesh.color = Random.ColorHSV(.5f, .75f, 1, 1, 1, 1);
+                    textMesh.color = UnityEngine.Random.ColorHSV(.5f, .75f, 1, 1, 1, 1);
                 }
                 break;
             case ("quit"):
                 if (canChangeColor)
                 {
                     StartCoroutine(ColorChange());
-                    textMesh.color = Random.ColorHSV(.75f, 1, 1, 1, 1, 1);
+                    textMesh.color = UnityEngine.Random.ColorHSV(.75f, 1, 1, 1, 1, 1);
                 }
                 break;
         }
@@ -152,12 +159,6 @@ public class GameManager : SingletonTemplate<GameManager>
         Physics2D.gravity = originalGravity; 
         mainMenu.SetActive(false);
         LoadNewLevel();
-
-        //Instantiate(roundStartUI);
-        Instantiate(roundPlayingUI);
-        Instantiate(roundEndUI);
-
-        ActivateUI(roundStartUI);
     }
 
     public void ToggleCredits()
@@ -177,15 +178,19 @@ public class GameManager : SingletonTemplate<GameManager>
 
     private void InitializePlayers()
     {
-        p1Vehicle = Resources.Load("Players/Player_1") as GameObject;
-        p2Vehicle = Resources.Load("Players/Player_2") as GameObject;
+        GameObject[] players = Resources.LoadAll<GameObject>("Vehicles");
+        foreach (GameObject p in players)
+        {
+            if(p.GetComponent<PlayerController>().isPlayer1)
+                p1List.Add(p);
+            else
+                p2List.Add(p);
+        }
     }
     
     private void InitializeUI()
     {
-        roundStartUI = Resources.Load<GameObject>("UI/RoundStartUI");
-        roundPlayingUI = Resources.Load<GameObject>("UI/RoundPlayingUI");
-        roundEndUI = Resources.Load<GameObject>("UI/RoundEndUI");
+        
     }
 
     private void InitializeLevels()
@@ -201,57 +206,42 @@ public class GameManager : SingletonTemplate<GameManager>
 
     private void LoadNewLevel()
     {
-        if(pc2)
-        {
-            Destroy(pc1.gameObject);
-        }
+        //Destroy old players and level
         if(pc1)
-        {
-            Destroy(pc2.gameObject);
-        }
+            Destroy(pc1.gameObject);        
+        if(pc2)
+            Destroy(pc2.gameObject);        
         if(currentLevel)
-        {
-            Destroy(currentLevel);
-        }
+            Destroy(currentLevel);        
 
-        //PlayerController[] players = FindObjectsByType<PlayerController>(FindObjectsSortMode.None);
-        int levelToLoad = Random.Range(0, levelPrefabs.Count);
+        //Create level. remove level from list.
+        int levelToLoad = UnityEngine.Random.Range(0, levelPrefabs.Count);
         currentLevel = Instantiate(levelPrefabs[levelToLoad]);
         levelPrefabs.RemoveAt(levelToLoad);
 
-        Instantiate(p1Vehicle, levelPrefabs[levelToLoad].GetComponent<LevelScript>().p1SpawnPoint.position, Quaternion.identity);
-        p1Vehicle.TryGetComponent(out pc1);
-        Instantiate(p2Vehicle, levelPrefabs[levelToLoad].GetComponent<LevelScript>().p2SpawnPoint.position, Quaternion.identity);
-        p2Vehicle.TryGetComponent(out pc2);
+        //Create players. remove players from list.
+        int p1Index = UnityEngine.Random.Range(0, p1List.Count);
+        p1 = Instantiate(p1List[p1Index], levelPrefabs[levelToLoad].GetComponent<LevelScript>().p1SpawnPoint.position, Quaternion.identity);
+        p1List.RemoveAt(p1Index);
+        p1.TryGetComponent(out pc1);
+        
+        int p2Index = UnityEngine.Random.Range(0, p2List.Count);
+        p2 = Instantiate(p1List[p1Index], levelPrefabs[levelToLoad].GetComponent<LevelScript>().p1SpawnPoint.position, Quaternion.identity);
+        p2List.RemoveAt(p2Index);
+        p2.TryGetComponent(out pc2);        
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(0);
     }
 
     public void ChangeLevelState(LEVEL_STATE levelState)
     {
-        currentState = levelState;
-
-        switch (levelState)
-        {
-            case LEVEL_STATE.ROUND_START:
-                ActivateUI(roundStartUI);                
-            break;
-
-            case LEVEL_STATE.ROUND_PLAYING:
-                ActivateUI(roundPlayingUI);
-                StopCoroutine(state);
-            break;
-
-            case LEVEL_STATE.ROUND_END:
-                ActivateUI(roundEndUI); 
-            break;
-        }
     }
 
     private void ActivateUI(GameObject UIToActivate)
     {
-        roundStartUI.SetActive(false);
-        roundPlayingUI.SetActive(false);
-        roundEndUI.SetActive(false);
-
         UIToActivate.SetActive(true);
     }
 
@@ -272,26 +262,45 @@ public class GameManager : SingletonTemplate<GameManager>
         }
     }
 
-    private void PlayerScored(PlayerController pc)
+    public void PlayerDied(bool isP1)
     {
-        pc.score++;
+        if(isP1)        
+            p2ScorePanel.AddScore();        
+        else
+            p1ScorePanel.AddScore();
+
         CheckWinCondition();
+        if(!isGameOver)
+        {
+            LoadNewLevel();
+        }
+
     }
 
     private void CheckWinCondition()
     {
-        if(pc1.score >= 5)
+        if(p1ScorePanel.score >= 3)
         {
-            GameOver(pc1);
+            GameOver(true);
         }
-        else if(pc2.score >= 5)
+        else if(p2ScorePanel.score >= 3)
         {
-            GameOver(pc2);
+            GameOver(false);
         }
     }
 
-    private void GameOver(PlayerController winner)
+    private void GameOver(bool isP1)
     {
-        //ChangeLevelState()
+        isGameOver = true;
+        gameOver.SetActive(true);
+
+        if (isP1)
+        {
+            onGameOver?.Invoke(isP1);
+        }
+        else
+        {
+            onGameOver?.Invoke(!isP1);
+        }
     }
 }
