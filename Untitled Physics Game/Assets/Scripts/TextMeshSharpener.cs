@@ -38,9 +38,9 @@ public class TextMeshSharpener : MonoBehaviour
         if (Camera.main.pixelHeight != lastPixelHeight || (Application.isEditor && !Application.isPlaying)) resize();
     }
 
-    private void OnMouseOver()
+    private void OnMouseEnter()
     {
-        buttonHover?.Invoke(text, textMesh);
+        textMesh.color = UnityEngine.Random.ColorHSV(0, 1, 1, 1, 1, 1);
     }
 
     private void resize()
@@ -48,7 +48,7 @@ public class TextMeshSharpener : MonoBehaviour
         float ph = Camera.main.pixelHeight;
         float ch = Camera.main.orthographicSize;
         float pixelRatio = (ch) / ph;
-        float targetRes = 64f;
+        float targetRes = 20f;
         textMesh.characterSize = pixelRatio * Camera.main.orthographicSize / Math.Max(transform.localScale.x, transform.localScale.y);
         textMesh.fontSize = (int)Math.Round(targetRes / textMesh.characterSize);
         lastPixelHeight = ph;
