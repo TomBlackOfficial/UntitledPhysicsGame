@@ -178,13 +178,15 @@ public class GameManager : SingletonTemplate<GameManager>
 
     private void InitializePlayers()
     {
-        GameObject[] players = Resources.LoadAll<GameObject>("Vehicles");
-        foreach (GameObject p in players)
+        GameObject[] players1 = Resources.LoadAll<GameObject>("Vehicles/p1");
+        foreach (GameObject p in players1)
         {
-            if(p.GetComponent<PlayerController>().isPlayer1)
-                p1List.Add(p);
-            else
-                p2List.Add(p);
+                p1List.Add(p);            
+        }
+        GameObject[] players2 = Resources.LoadAll<GameObject>("Vehicles/p2");
+        foreach (GameObject p in players2)
+        {
+                p2List.Add(p);            
         }
     }
     
