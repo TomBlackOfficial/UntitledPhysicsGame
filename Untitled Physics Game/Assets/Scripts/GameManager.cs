@@ -22,6 +22,7 @@ public class GameManager : SingletonTemplate<GameManager>
     public GameObject roundEndUI;
     public GameObject roundPlayingUI;
     public GameObject credits;
+    public GameObject rules;
     public GameObject mainMenu;
 
     [Header("Players")]
@@ -69,6 +70,9 @@ public class GameManager : SingletonTemplate<GameManager>
             case ("credits"):
                 ToggleCredits();
                 break;
+            case ("rules"):
+                ToggleRules();
+                break;
             case ("quit"):
                 Quit();
                 break;
@@ -90,21 +94,28 @@ public class GameManager : SingletonTemplate<GameManager>
                 if (canChangeColor)
                 {
                     StartCoroutine(ColorChange());
-                    textMesh.color = Random.ColorHSV(0, .33f, 1, 1, 1, 1);
+                    textMesh.color = Random.ColorHSV(0, .25f, 1, 1, 1, 1);
                 }
                 break;
             case ("credits"):
                 if (canChangeColor)
                 {
                     StartCoroutine(ColorChange());
-                    textMesh.color = Random.ColorHSV(.33f, .66f, 1, 1, 1, 1);
+                    textMesh.color = Random.ColorHSV(.25f, .5f, 1, 1, 1, 1);
+                }
+                break;
+            case ("rules"):
+                if (canChangeColor)
+                {
+                    StartCoroutine(ColorChange());
+                    textMesh.color = Random.ColorHSV(.5f, .75f, 1, 1, 1, 1);
                 }
                 break;
             case ("quit"):
                 if (canChangeColor)
                 {
                     StartCoroutine(ColorChange());
-                    textMesh.color = Random.ColorHSV(.66f, 1, 1, 1, 1, 1);
+                    textMesh.color = Random.ColorHSV(.75f, 1, 1, 1, 1, 1);
                 }
                 break;
         }
@@ -152,6 +163,11 @@ public class GameManager : SingletonTemplate<GameManager>
     public void ToggleCredits()
     {
         credits.SetActive(!credits.activeInHierarchy);
+    }
+    
+    public void ToggleRules()
+    {
+        rules.SetActive(!credits.activeInHierarchy);
     }
 
     public void Quit()
