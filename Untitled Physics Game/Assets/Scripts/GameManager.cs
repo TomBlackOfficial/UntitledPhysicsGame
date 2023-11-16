@@ -24,6 +24,7 @@ public class GameManager : SingletonTemplate<GameManager>
     public GameObject rules;
     public GameObject mainMenu;
     public GameObject gameOver;
+    public GameObject scorePanel;
 
     [Header("Players")]
     public GameObject p1, p2;
@@ -158,6 +159,7 @@ public class GameManager : SingletonTemplate<GameManager>
     {
         Physics2D.gravity = originalGravity; 
         mainMenu.SetActive(false);
+        scorePanel.SetActive(true);
         LoadNewLevel();
     }
 
@@ -228,7 +230,7 @@ public class GameManager : SingletonTemplate<GameManager>
         p1.TryGetComponent(out pc1);
         
         int p2Index = UnityEngine.Random.Range(0, p2List.Count);
-        p2 = Instantiate(p1List[p1Index], levelPrefabs[levelToLoad].GetComponent<LevelScript>().p1SpawnPoint.position, Quaternion.identity);
+        p2 = Instantiate(p2List[p2Index], levelPrefabs[levelToLoad].GetComponent<LevelScript>().p2SpawnPoint.position, Quaternion.identity);
         p2List.RemoveAt(p2Index);
         p2.TryGetComponent(out pc2);        
     }
