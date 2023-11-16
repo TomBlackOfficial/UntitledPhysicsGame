@@ -38,6 +38,8 @@ public class GameManager : SingletonTemplate<GameManager>
     public static event Action<bool> onGameOver;
     private bool isGameOver;
 
+    private bool isPlayerDead;
+
     public enum LEVEL_STATE
     {
         START_GAME,
@@ -210,6 +212,8 @@ public class GameManager : SingletonTemplate<GameManager>
 
     private void LoadNewLevel()
     {
+        isPlayerDead = false;
+
         //Destroy old players and level
         if(pc1)
             Destroy(pc1.gameObject);        
@@ -269,10 +273,15 @@ public class GameManager : SingletonTemplate<GameManager>
 
     public void PlayerDied(bool isP1)
     {
+        if (isPlayerDead)
+            return;
+
         if(isP1)        
             p2ScorePanel.AddScore();        
         else
             p1ScorePanel.AddScore();
+
+        isPlayerDead = true;
     }
 
     public void RoundOver()

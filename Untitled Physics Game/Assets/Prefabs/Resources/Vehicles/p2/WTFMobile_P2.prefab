@@ -17,6 +17,14 @@ PrefabInstance:
       value: WTFMobile_P1 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 912334135225932201, guid: 8fc454bacd6866f4eb82c9bd3043e11c, type: 3}
+      propertyPath: speed
+      value: 350
+      objectReference: {fileID: 0}
+    - target: {fileID: 912334135225932201, guid: 8fc454bacd6866f4eb82c9bd3043e11c, type: 3}
+      propertyPath: carTorque
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 912334135225932201, guid: 8fc454bacd6866f4eb82c9bd3043e11c, type: 3}
       propertyPath: isPlayer1
       value: 0
       objectReference: {fileID: 0}

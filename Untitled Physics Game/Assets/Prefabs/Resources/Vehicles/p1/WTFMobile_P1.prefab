@@ -240,8 +240,8 @@ MonoBehaviour:
   isPlayer1: 1
   backTire: {fileID: 3991302042908735030}
   frontTire: {fileID: 2308973911264795449}
-  speed: 250
-  carTorque: 150
+  speed: 350
+  carTorque: 250
   score: 0
 --- !u!235 &3683927626030424335
 WheelJoint2D:

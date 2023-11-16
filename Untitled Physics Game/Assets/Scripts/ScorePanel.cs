@@ -14,12 +14,18 @@ public class ScorePanel : MonoBehaviour
 
     public void AddScore()
     {
+        if (stars[score] == null)
+            return;
+
         EnableStar(stars[score]);
         score++;
     }
 
     public void RemoveScore()
     {
+        if (stars[score] == null)
+            return;
+
         DisableStar(stars[score]);
         score--;
     }
