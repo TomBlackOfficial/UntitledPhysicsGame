@@ -57,7 +57,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 2500
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -78,7 +78,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 1024
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -119,12 +119,12 @@ TextureImporter:
       name: CAR ONE MOBILE_0
       rect:
         serializedVersion: 2
-        x: 93
-        y: 1465
-        width: 4223
-        height: 2419
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 1471
+        width: 4309
+        height: 2427
+      alignment: 9
+      pivot: {x: 0.5, y: 0.35}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -142,10 +142,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1439
-        height: 1439
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 1448
+        height: 1446
+      alignment: 9
+      pivot: {x: 0.4969098, y: 0.49767923}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -161,12 +161,12 @@ TextureImporter:
       name: CAR ONE MOBILE_2
       rect:
         serializedVersion: 2
-        x: 3121
-        y: 30
-        width: 1080
-        height: 1080
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 3120
+        y: 27
+        width: 1090
+        height: 1090
+      alignment: 9
+      pivot: {x: 0.499352, y: 0.49935207}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -181,7 +181,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: e4e9249fc69b2694c9f64159934ab660
     internalID: 0
     vertices: []
     indices: 

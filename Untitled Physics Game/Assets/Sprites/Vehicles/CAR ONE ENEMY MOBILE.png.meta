@@ -57,7 +57,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 2500
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -78,7 +78,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 1024
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -119,12 +119,12 @@ TextureImporter:
       name: CAR ONE ENEMY MOBILE_0
       rect:
         serializedVersion: 2
-        x: 83
-        y: 1477
-        width: 4226
-        height: 2421
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 1460
+        width: 4316
+        height: 2424
+      alignment: 9
+      pivot: {x: 0.5, y: 0.35}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -142,10 +142,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1441
-        height: 1441
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 1444
+        height: 1443
+      alignment: 9
+      pivot: {x: 0.498065, y: 0.4970954}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -161,12 +161,12 @@ TextureImporter:
       name: CAR ONE ENEMY MOBILE_2
       rect:
         serializedVersion: 2
-        x: 3124
-        y: 31
-        width: 1081
-        height: 1081
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 3117
+        y: 27
+        width: 1096
+        height: 1087
+      alignment: 9
+      pivot: {x: 0.4959131, y: 0.50000006}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -181,7 +181,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 26713d718513a2344b784b723f218f67
     internalID: 0
     vertices: []
     indices: 
