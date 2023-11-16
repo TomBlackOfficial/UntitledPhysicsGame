@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
 
     //ABHI: added int variale to keep track of score
     public int score = 0;
-    public static event Action<bool> playerDead;
+    public static event Action playerDead;
 
     private float movement;
 
@@ -52,6 +52,9 @@ public class PlayerController : MonoBehaviour
     public void Die()
     {
         StartCoroutine(DieTimer());
+
+        if (GameManager.instance != null)
+            GameManager.instance.PlayerDied(isPlayer1);
     }
 
     IEnumerator DieTimer()
@@ -61,6 +64,6 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         Time.timeScale = 1f;
-        playerDead?.Invoke(isPlayer1);
+        playerDead?.Invoke();
     }
 }

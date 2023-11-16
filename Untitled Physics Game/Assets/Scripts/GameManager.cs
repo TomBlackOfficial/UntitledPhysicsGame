@@ -54,14 +54,14 @@ public class GameManager : SingletonTemplate<GameManager>
     {
         TextMeshSharpener.buttonPressed += OnButtonPressed;
         TextMeshSharpener.buttonHover += MouseOver;
-        PlayerController.playerDead += PlayerDied;
+        PlayerController.playerDead += RoundOver;
     }
 
     private void OnDisable()
     {
         TextMeshSharpener.buttonPressed -= OnButtonPressed;
         TextMeshSharpener.buttonHover -= MouseOver;
-        PlayerController.playerDead -= PlayerDied;
+        PlayerController.playerDead -= RoundOver;
     }
 
     private void OnButtonPressed(string buttonName)
@@ -221,18 +221,19 @@ public class GameManager : SingletonTemplate<GameManager>
         //Create level. remove level from list.
         int levelToLoad = UnityEngine.Random.Range(0, levelPrefabs.Count);
         currentLevel = Instantiate(levelPrefabs[levelToLoad]);
-        levelPrefabs.RemoveAt(levelToLoad);
 
         //Create players. remove players from list.
         int p1Index = UnityEngine.Random.Range(0, p1List.Count);
         p1 = Instantiate(p1List[p1Index], levelPrefabs[levelToLoad].GetComponent<LevelScript>().p1SpawnPoint.position, Quaternion.identity);
-        p1List.RemoveAt(p1Index);
         p1.TryGetComponent(out pc1);
         
         int p2Index = UnityEngine.Random.Range(0, p2List.Count);
         p2 = Instantiate(p2List[p2Index], levelPrefabs[levelToLoad].GetComponent<LevelScript>().p2SpawnPoint.position, Quaternion.identity);
+        p2.TryGetComponent(out pc2);
+
+        levelPrefabs.RemoveAt(levelToLoad);
+        p1List.RemoveAt(p1Index);
         p2List.RemoveAt(p2Index);
-        p2.TryGetComponent(out pc2);        
     }
 
     public void RestartGame()
@@ -272,13 +273,15 @@ public class GameManager : SingletonTemplate<GameManager>
             p2ScorePanel.AddScore();        
         else
             p1ScorePanel.AddScore();
+    }
 
+    public void RoundOver()
+    {
         CheckWinCondition();
-        if(!isGameOver)
+        if (!isGameOver)
         {
             LoadNewLevel();
         }
-
     }
 
     private void CheckWinCondition()
