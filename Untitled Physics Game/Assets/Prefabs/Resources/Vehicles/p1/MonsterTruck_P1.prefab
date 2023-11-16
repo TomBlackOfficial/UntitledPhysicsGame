@@ -396,7 +396,7 @@ PolygonCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: af69693357bd804459ef6b6de57c20b5, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -556,7 +556,7 @@ Transform:
   m_GameObject: {fileID: 8935747852986291895}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.34, y: -1, z: 0}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -576,7 +576,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 3
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0.9
@@ -606,7 +606,7 @@ MonoBehaviour:
   isPlayer1: 1
   backTire: {fileID: 5811993528150716759}
   frontTire: {fileID: 7502464832921825023}
-  speed: 150
+  speed: 250
   carTorque: 150
   score: 0
 --- !u!235 &8536219986902573631
@@ -667,6 +667,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8930810625060538123}
     m_Modifications:
+    - target: {fileID: 23274271028221572, guid: 33e5d08fe99c87a4ba00780ea07f031a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.32198432
+      objectReference: {fileID: 0}
     - target: {fileID: 77649398011676851, guid: 33e5d08fe99c87a4ba00780ea07f031a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.016000032
@@ -711,6 +715,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character
       objectReference: {fileID: 0}
+    - target: {fileID: 2227103528807912931, guid: 33e5d08fe99c87a4ba00780ea07f031a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9593939
+      objectReference: {fileID: 0}
+    - target: {fileID: 2227103528807912931, guid: 33e5d08fe99c87a4ba00780ea07f031a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.28206977
+      objectReference: {fileID: 0}
+    - target: {fileID: 2776172496452974716, guid: 33e5d08fe99c87a4ba00780ea07f031a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9678638
+      objectReference: {fileID: 0}
+    - target: {fileID: 2776172496452974716, guid: 33e5d08fe99c87a4ba00780ea07f031a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.25147516
+      objectReference: {fileID: 0}
+    - target: {fileID: 3269595571761782532, guid: 33e5d08fe99c87a4ba00780ea07f031a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.6216511
+      objectReference: {fileID: 0}
+    - target: {fileID: 3269595571761782532, guid: 33e5d08fe99c87a4ba00780ea07f031a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.78329426
+      objectReference: {fileID: 0}
+    - target: {fileID: 5798817584730355227, guid: 33e5d08fe99c87a4ba00780ea07f031a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5243291
+      objectReference: {fileID: 0}
+    - target: {fileID: 5798817584730355227, guid: 33e5d08fe99c87a4ba00780ea07f031a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.8515157
+      objectReference: {fileID: 0}
     - target: {fileID: 7520493325467913685, guid: 33e5d08fe99c87a4ba00780ea07f031a, type: 3}
       propertyPath: player
       value: 
@@ -727,6 +763,14 @@ PrefabInstance:
       propertyPath: 'collidersToIgnore.Array.data[3]'
       value: 
       objectReference: {fileID: 714187331089080179}
+    - target: {fileID: 8470165464003492576, guid: 33e5d08fe99c87a4ba00780ea07f031a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9858009
+      objectReference: {fileID: 0}
+    - target: {fileID: 8470165464003492576, guid: 33e5d08fe99c87a4ba00780ea07f031a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.1679186
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -27,15 +27,24 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        float oldMovement = movement;
+
         if (isPlayer1)
             movement = Input.GetAxisRaw("Horizontal_P1");
         else
             movement = Input.GetAxisRaw("Horizontal_P2");
+
+        if (oldMovement != movement)
+        {
+            rb.totalTorque = 0;
+            backTire.totalTorque = 0;
+            frontTire.totalTorque = 0;
+        }
     }
 
     private void FixedUpdate()
     {
-        backTire.AddTorque(-movement * speed * Time.fixedDeltaTime); ;
+        backTire.AddTorque(-movement * speed * Time.fixedDeltaTime);
         frontTire.AddTorque(-movement * speed * Time.fixedDeltaTime);
         rb.AddTorque(movement * carTorque * Time.fixedDeltaTime);
     }
