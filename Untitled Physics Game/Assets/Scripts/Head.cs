@@ -16,4 +16,14 @@ public class Head : MonoBehaviour
 
         player.Die();
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collidersToIgnore.Contains(collision))
+        {
+            return;
+        }
+
+        player.Die();
+    }
 }

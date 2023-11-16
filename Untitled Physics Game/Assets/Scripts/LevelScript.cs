@@ -7,7 +7,7 @@ public class LevelScript : MonoBehaviour
     public Transform p1SpawnPoint, p2SpawnPoint;
 
     [SerializeField] LevelEffect[] levelEffects;
-    [SerializeField] int timeToActivateEffects;
+    [SerializeField] int timeToActivateEffects = 10;
 
     private void Start()
     {

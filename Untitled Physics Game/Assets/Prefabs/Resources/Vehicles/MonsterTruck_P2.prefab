@@ -130,11 +130,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8930810625060538123, guid: bc5b9d0ee4c4c3a4ab1f506d9dcf2d61, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.34
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8930810625060538123, guid: bc5b9d0ee4c4c3a4ab1f506d9dcf2d61, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8930810625060538123, guid: bc5b9d0ee4c4c3a4ab1f506d9dcf2d61, type: 3}
       propertyPath: m_LocalPosition.z
@@ -170,7 +170,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8935747852986291895, guid: bc5b9d0ee4c4c3a4ab1f506d9dcf2d61, type: 3}
       propertyPath: m_Name
-      value: MonsterTruck_P2 Variant
+      value: MonsterTruck_P2
       objectReference: {fileID: 0}
     - target: {fileID: 8935747852986291895, guid: bc5b9d0ee4c4c3a4ab1f506d9dcf2d61, type: 3}
       propertyPath: m_TagString
