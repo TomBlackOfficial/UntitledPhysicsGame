@@ -213,9 +213,10 @@ public class GameManager : SingletonTemplate<GameManager>
     private void LoadNewLevel()
     {
         isPlayerDead = false;
+        Time.timeScale = 1f;
 
         //Destroy old players and level
-        if(pc1)
+        if (pc1)
             Destroy(pc1.gameObject);        
         if(pc2)
             Destroy(pc2.gameObject);        
@@ -310,13 +311,6 @@ public class GameManager : SingletonTemplate<GameManager>
         isGameOver = true;
         gameOver.SetActive(true);
 
-        if (isP1)
-        {
-            onGameOver?.Invoke(isP1);
-        }
-        else
-        {
-            onGameOver?.Invoke(!isP1);
-        }
+        onGameOver?.Invoke(isP1);
     }
 }

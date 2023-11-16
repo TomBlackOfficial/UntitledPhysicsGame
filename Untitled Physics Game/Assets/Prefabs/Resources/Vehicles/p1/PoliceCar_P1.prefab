@@ -98,7 +98,7 @@ PolygonCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: af69693357bd804459ef6b6de57c20b5, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -446,7 +446,7 @@ MonoBehaviour:
   backTire: {fileID: 7404819776924184765}
   frontTire: {fileID: 461749398373812871}
   speed: 250
-  carTorque: 200
+  carTorque: 250
   score: 0
 --- !u!235 &784932336055353800
 WheelJoint2D:
