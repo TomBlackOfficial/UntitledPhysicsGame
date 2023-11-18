@@ -172,7 +172,7 @@ public class GameManager : SingletonTemplate<GameManager>
     
     public void ToggleRules()
     {
-        rules.SetActive(!credits.activeInHierarchy);
+        rules.SetActive(!rules.activeInHierarchy);
     }
 
     public void Quit()
