@@ -40,7 +40,6 @@ public class CircleManager : MonoBehaviour
             currentCircle = Instantiate(Pcars[Random.value < 0.5? 0 : 1], mousePos, Quaternion.identity, parent.transform);
             currentCircle.transform.localScale = currentCircleBP.transform.localScale;
             currentCircle.GetComponent<Rigidbody2D>().mass *= currentCircle.transform.localScale.x;
-            currentCircle.GetComponent<SpriteRenderer>().color = Random.ColorHSV(0f, 1f, 1f, 1f, 1f, 1f);
             Destroy(currentCircleBP);
             tempScale = Vector3.zero;
         }

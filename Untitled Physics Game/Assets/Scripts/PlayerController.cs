@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
 
     private CircleCollider2D backTireCollider;
     private CircleCollider2D frontTireCollider;
+    public ParticleSystem bloodPS;
 
     private void Awake()
     {
@@ -129,6 +130,8 @@ public class PlayerController : MonoBehaviour
 
     public void Die()
     {
+        StartCoroutine(PlayParticles());
+
         if(AudioManager.instance.STATE == AudioManager.GAME_STATES.PLAYING)
         {
             StartCoroutine(DieTimer());
@@ -137,6 +140,13 @@ public class PlayerController : MonoBehaviour
                 GameManager.instance.PlayerDied(isPlayer1);
         }
         return;
+    }
+
+    private IEnumerator PlayParticles()
+    {
+        bloodPS.Play();
+        yield return new WaitForSeconds(bloodPS.main.duration);
+        bloodPS.Stop();
     }
 
     IEnumerator DieTimer()
