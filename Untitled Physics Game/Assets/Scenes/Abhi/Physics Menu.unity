@@ -1123,8 +1123,8 @@ RectTransform:
   m_GameObject: {fileID: 391346036}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1105721276}
   m_Father: {fileID: 679337895}
@@ -1443,8 +1443,8 @@ RectTransform:
   m_GameObject: {fileID: 423115695}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1822856452}
   - {fileID: 1104125918}
@@ -4259,12 +4259,12 @@ GameObject:
   - component: {fileID: 1252293586}
   - component: {fileID: 1252293585}
   m_Layer: 5
-  m_Name: CreditsPanel
+  m_Name: RulesPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1252293584
 RectTransform:
   m_ObjectHideFlags: 0
