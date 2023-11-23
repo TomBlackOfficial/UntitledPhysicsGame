@@ -140,7 +140,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Banner_3_0: 6171164885635594083
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
