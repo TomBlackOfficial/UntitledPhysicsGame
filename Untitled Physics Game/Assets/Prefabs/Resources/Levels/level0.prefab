@@ -632,8 +632,8 @@ MonoBehaviour:
   p1SpawnPoint: {fileID: 3487261907265655516}
   p2SpawnPoint: {fileID: 3573987840569670428}
   levelEffects:
-  - {fileID: 5897428643778926410}
-  timeToActivateEffects: 10
+  - {fileID: 3735024961032375983}
+  timeToActivateEffects: 6
 --- !u!1 &9197395276465448135
 GameObject:
   m_ObjectHideFlags: 0
@@ -745,7 +745,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2148538626160094162, guid: ef91e6c22d6890549862c2e2ae50a178, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.5
+      value: -1.25
       objectReference: {fileID: 0}
     - target: {fileID: 2148538626160094162, guid: ef91e6c22d6890549862c2e2ae50a178, type: 3}
       propertyPath: m_LocalPosition.z
@@ -785,14 +785,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef91e6c22d6890549862c2e2ae50a178, type: 3}
---- !u!4 &3848420338723150768 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2148538626160094162, guid: ef91e6c22d6890549862c2e2ae50a178, type: 3}
-  m_PrefabInstance: {fileID: 2934501528741949538}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &5897428643778926410 stripped
+--- !u!114 &3735024961032375983 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8750091159548274472, guid: ef91e6c22d6890549862c2e2ae50a178, type: 3}
+  m_CorrespondingSourceObject: {fileID: 1975964223524339405, guid: ef91e6c22d6890549862c2e2ae50a178, type: 3}
   m_PrefabInstance: {fileID: 2934501528741949538}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
@@ -801,3 +796,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e116d893e2c8929418289abef74c0370, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &3848420338723150768 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2148538626160094162, guid: ef91e6c22d6890549862c2e2ae50a178, type: 3}
+  m_PrefabInstance: {fileID: 2934501528741949538}
+  m_PrefabAsset: {fileID: 0}

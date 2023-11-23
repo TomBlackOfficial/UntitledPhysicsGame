@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2148538626160094162}
   - component: {fileID: 3235951510863353432}
-  - component: {fileID: 8750091159548274472}
+  - component: {fileID: 1975964223524339405}
   m_Layer: 0
   m_Name: Lava
   m_TagString: Untagged
@@ -28,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.71428573, y: 0.71428573, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6770749935501742944}
@@ -59,7 +59,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &8750091159548274472
+--- !u!114 &1975964223524339405
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

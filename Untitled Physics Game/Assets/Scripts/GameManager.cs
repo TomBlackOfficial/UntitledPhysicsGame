@@ -130,6 +130,8 @@ public class GameManager : SingletonTemplate<GameManager>
         base.Awake();
         InitializeLevels();
         InitializePlayers();
+
+        AudioListener.volume = 0.4f;
     }
 
     private void Start()

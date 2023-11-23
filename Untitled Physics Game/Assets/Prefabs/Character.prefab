@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5825162128031694457}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 140344008359559673}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.04581929, w: 0.9989497}
+  m_LocalRotation: {x: 0, y: 0, z: -0.045839276, w: 0.9989488}
   m_LocalPosition: {x: 0.12437642, y: -5.1479343e-10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -43,7 +43,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8161879098960185984}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: New LimbSolver2D_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8015058413758251486}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 626486160222091321}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.7291099, w: 0.68439674}
+  m_LocalRotation: {x: 0, y: 0, z: 0.729115, w: 0.68439126}
   m_LocalPosition: {x: -0.004949056, y: -0.0013798422, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -108,7 +108,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 23274271028221572}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hand_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 629457522067694002}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.32198462, w: 0.946745}
+  m_LocalRotation: {x: -0, y: -0, z: 0.45088577, w: 0.8925816}
   m_LocalPosition: {x: 0.12122753, y: 0.002116617, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -142,7 +142,7 @@ GameObject:
   - component: {fileID: 4005706897533261037}
   - component: {fileID: 968925815692935282}
   - component: {fileID: 5870671245698936421}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -159,7 +159,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.016000032, y: 0.16400003, z: 0}
-  m_LocalScale: {x: 0.79999995, y: 0.79999995, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8015058413758251486}
@@ -288,7 +288,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5750878162490352393}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RightArmSolver_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -304,7 +304,7 @@ Transform:
   m_GameObject: {fileID: 1619160459081253124}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.28831884, w: 0.95753443}
-  m_LocalPosition: {x: 0.2066946, y: 0.15653653, z: 0}
+  m_LocalPosition: {x: 0.16722107, y: 0.08910279, z: 0}
   m_LocalScale: {x: 1.2500001, y: 1.2500001, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -319,7 +319,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3269595571761782532}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: UpperArm_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -334,7 +334,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1763528237607561464}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0, z: 0.7832939, w: -0.62165165}
+  m_LocalRotation: {x: 0, y: 0, z: 0.8519766, w: -0.52357996}
   m_LocalPosition: {x: 0.07737576, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -351,7 +351,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1045491360305494207}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Foot_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -382,7 +382,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5393208331942685056}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: UpperLeg_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -414,7 +414,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 180022775585372918}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LowerLeg_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -446,7 +446,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5798817584730355227}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: UpperArm_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -461,7 +461,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2399134873936007176}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.8515153, w: 0.5243299}
+  m_LocalRotation: {x: 0, y: 0, z: -0.96101147, w: 0.2765087}
   m_LocalPosition: {x: 0.07135673, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -478,7 +478,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8470165464003492576}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LowerArm_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -493,7 +493,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2734699565664663170}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.16791768, w: 0.98580104}
+  m_LocalRotation: {x: 0, y: 0, z: 0.1480527, w: 0.9889795}
   m_LocalPosition: {x: 0.11437379, y: 0.00000080591934, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -510,7 +510,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3378947331308704747}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LeftArmSolver_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -526,7 +526,7 @@ Transform:
   m_GameObject: {fileID: 2888197622679269655}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.35954496, w: -0.9331278}
-  m_LocalPosition: {x: 0.22066301, y: 0.18275051, z: 0}
+  m_LocalPosition: {x: 0.20915025, y: 0.12354086, z: 0}
   m_LocalScale: {x: 1.2500001, y: 1.2500001, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -542,7 +542,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4024184081475953198}
   - component: {fileID: 5115362512665262581}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RightArmSolver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -606,7 +606,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2227103528807912931}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LowerArm_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -621,7 +621,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4046362267671137136}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.2820683, w: 0.95939434}
+  m_LocalRotation: {x: 0, y: 0, z: 0.43601796, w: 0.899938}
   m_LocalPosition: {x: 0.10552364, y: -0.00000041490878, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -638,7 +638,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3548588868587791499}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LowerLeg_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -672,7 +672,7 @@ GameObject:
   - component: {fileID: 4510397720312295947}
   - component: {fileID: 7520493325467913685}
   - component: {fileID: 1715875389972030698}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -687,7 +687,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4419037284739155041}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.043685474, w: 0.99904543}
+  m_LocalRotation: {x: -0, y: -0, z: 0.043697957, w: 0.9990448}
   m_LocalPosition: {x: 0.079, y: 0.001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -757,7 +757,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 94813819401145595}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Foot_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -788,7 +788,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2776172496452974716}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hand_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -803,7 +803,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6360031900761205518}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.25147578, w: 0.96786356}
+  m_LocalRotation: {x: -0, y: -0, z: 0.3529911, w: 0.9356267}
   m_LocalPosition: {x: 0.12523754, y: 0.0030558174, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -819,7 +819,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1702069102311394989}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: UpperLeg_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -852,7 +852,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9127123671892764635}
   - component: {fileID: 4623342549241176634}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: New LimbSolver2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -917,7 +917,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5719829556315690688}
   - component: {fileID: 7948979734057836936}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LeftArmSolver
   m_TagString: Untagged
   m_Icon: {fileID: 0}

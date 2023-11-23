@@ -106,8 +106,8 @@ public class PlayerController : MonoBehaviour
             return;
 
         jumpTimer = 0;
-
         rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
+        AudioManager.instance.PlayOneShot(AudioManager.AUDIO_CLIPS.JUMP);
     }
 
     private void CheckWheelCollision()
