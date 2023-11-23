@@ -2637,6 +2637,9 @@ MonoBehaviour:
   currentCircle: {fileID: 0}
   currentCircleBP: {fileID: 0}
   parent: {fileID: 0}
+  Pcars:
+  - {fileID: 8935747852986291895, guid: bc5b9d0ee4c4c3a4ab1f506d9dcf2d61, type: 3}
+  - {fileID: 1214549766064988592, guid: cbee7b5bd44bd414598b8136dff8d6bc, type: 3}
   circleGrowthRate: 0.5
 --- !u!1 &886830719
 GameObject:
@@ -4256,7 +4259,7 @@ GameObject:
   - component: {fileID: 1252293586}
   - component: {fileID: 1252293585}
   m_Layer: 5
-  m_Name: CreditsPanel
+  m_Name: RulesPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5596,6 +5599,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 1743791070}
+  mainMenu: {fileID: 8300000, guid: 59f268c1d53f59246891b2a451ac6e83, type: 3}
+  playing: {fileID: 8300000, guid: 2d6c2b0dddc86db4bab4a1c6c1dfd7a3, type: 3}
+  engine: {fileID: 8300000, guid: f091c863404509b4b88e7647ff2a6bda, type: 3}
+  crash1: {fileID: 8300000, guid: 488647746dd328342b1d19a3d6fbb2ec, type: 3}
+  crash2: {fileID: 8300000, guid: 7a37ea4bfc578b74197ade373791b9b5, type: 3}
+  options: {fileID: 8300000, guid: bbd2b94bdf105b145b06b030627ea099, type: 3}
+  jump: {fileID: 8300000, guid: 4251cd378b3624947b4f58d4c1a649f3, type: 3}
+  honk: {fileID: 8300000, guid: f9a7037d818590c44b308077a927fa40, type: 3}
+  STATE: 0
 --- !u!82 &1743791070
 AudioSource:
   m_ObjectHideFlags: 0

@@ -5,6 +5,8 @@ using UnityEngine;
 public class CircleManager : MonoBehaviour
 {
     public GameObject Pcircle, PcircleBP, currentCircle, currentCircleBP, parent;
+    public GameObject[] Pcars = new GameObject[2];
+
     public float circleGrowthRate = 0.1f;
 
     private void Awake()
@@ -35,7 +37,7 @@ public class CircleManager : MonoBehaviour
         }
         if(Input.GetMouseButtonUp(1))
         {
-            currentCircle = Instantiate(Pcircle, mousePos, Quaternion.identity, parent.transform);
+            currentCircle = Instantiate(Pcars[Random.value < 0.5? 0 : 1], mousePos, Quaternion.identity, parent.transform);
             currentCircle.transform.localScale = currentCircleBP.transform.localScale;
             currentCircle.GetComponent<Rigidbody2D>().mass *= currentCircle.transform.localScale.x;
             currentCircle.GetComponent<SpriteRenderer>().color = Random.ColorHSV(0f, 1f, 1f, 1f, 1f, 1f);
@@ -44,3 +46,5 @@ public class CircleManager : MonoBehaviour
         }
     }
 }
+
+//currentCircle.GetComponent<SpriteRenderer>().color = Random.ColorHSV(0f, 1f, 1f, 1f, 1f, 1f);

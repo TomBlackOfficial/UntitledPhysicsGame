@@ -46,6 +46,15 @@ public class PlayerController : MonoBehaviour
 
         float oldMovement = movement;
 
+        if(Input.GetKeyDown(KeyCode.H) && isPlayer1)
+        {
+            AudioManager.instance.PlayOneShot(AudioManager.AUDIO_CLIPS.HONK);
+        }
+        else if(Input.GetKeyDown(KeyCode.RightControl) && !isPlayer1)
+        {
+            AudioManager.instance.PlayOneShot(AudioManager.AUDIO_CLIPS.HONK);
+        }
+
         if (isPlayer1)
             movement = Input.GetAxisRaw("Horizontal_P1");
         else
@@ -59,7 +68,7 @@ public class PlayerController : MonoBehaviour
 
         if (isPlayer1)
         {
-            if (Input.GetKeyDown(KeyCode.Space)) 
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 Jump();
             }
@@ -120,10 +129,14 @@ public class PlayerController : MonoBehaviour
 
     public void Die()
     {
-        StartCoroutine(DieTimer());
+        if(AudioManager.instance.STATE == AudioManager.GAME_STATES.PLAYING)
+        {
+            StartCoroutine(DieTimer());
 
-        if (GameManager.instance != null)
-            GameManager.instance.PlayerDied(isPlayer1);
+            if (GameManager.instance != null)
+                GameManager.instance.PlayerDied(isPlayer1);
+        }
+        return;
     }
 
     IEnumerator DieTimer()
