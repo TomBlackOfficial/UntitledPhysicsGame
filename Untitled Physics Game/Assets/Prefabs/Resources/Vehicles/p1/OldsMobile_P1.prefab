@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4169631297040550580}
   - component: {fileID: 1673983423543645692}
   - component: {fileID: 3256888102605767873}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,7 +179,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 925464376906329242}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RightArmSolver_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -210,7 +210,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9027562400798098305}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LowerArm_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -242,7 +242,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8488731437409337143}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hand_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -273,7 +273,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2526085727238468039}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LowerLeg_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -305,7 +305,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2888634950079959593}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: UpperLeg_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -337,7 +337,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6555509847439763511}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -371,7 +371,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6274541950404987080}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: New LimbSolver2D_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -406,7 +406,7 @@ GameObject:
   - component: {fileID: 4737937956128959858}
   - component: {fileID: 1181795593712653751}
   - component: {fileID: 365908650784180631}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: OldsMobile_P1
   m_TagString: p1
   m_Icon: {fileID: 0}
@@ -443,7 +443,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 2
-  m_LinearDrag: 0
+  m_LinearDrag: 0.5
   m_AngularDrag: 0.05
   m_GravityScale: 0.9
   m_Material: {fileID: 0}
@@ -473,8 +473,11 @@ MonoBehaviour:
   backTire: {fileID: 5666375680237765242}
   frontTire: {fileID: 5643422288757865355}
   speed: 300
-  carTorque: 150
-  score: 0
+  carTorque: 8
+  jumpForce: 25
+  collisionMask:
+    serializedVersion: 2
+    m_Bits: 129
 --- !u!235 &1181795593712653751
 WheelJoint2D:
   m_ObjectHideFlags: 0
@@ -534,7 +537,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3809589659167594620}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: UpperArm_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -567,7 +570,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1405990403339190216}
   - component: {fileID: 7263702644486628390}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RightArmSolver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -633,7 +636,7 @@ GameObject:
   - component: {fileID: 1735835859169962710}
   - component: {fileID: 1542718982761574280}
   - component: {fileID: 1483038572482585767}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -718,7 +721,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7598658416368308957}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: UpperLeg_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -750,7 +753,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8380688266089437564}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Foot_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -781,7 +784,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 348132166936885665}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -815,7 +818,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2221219793508727216}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LowerArm_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -847,7 +850,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3685695729922549950}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LowerLeg_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -882,7 +885,7 @@ GameObject:
   - component: {fileID: 1522482560309195536}
   - component: {fileID: 1324885674721456485}
   - component: {fileID: 8933580277608248306}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1028,7 +1031,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6098004047993449275}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: UpperArm_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1061,7 +1064,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2529875949212517586}
   - component: {fileID: 1890035551790864309}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LeftArmSolver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1125,7 +1128,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1704911556526997947}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hand_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1156,7 +1159,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 927779048858591219}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Foot_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1187,7 +1190,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5615055815096565428}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LeftArmSolver_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1219,7 +1222,7 @@ GameObject:
   m_Component:
   - component: {fileID: 184724862768749052}
   - component: {fileID: 2268310278714345261}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: New LimbSolver2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1286,7 +1289,7 @@ GameObject:
   - component: {fileID: 2788154895348713522}
   - component: {fileID: 5666375680237765242}
   - component: {fileID: 8847283239141956873}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Wheel_Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1435,7 +1438,7 @@ GameObject:
   - component: {fileID: 6609513650447319523}
   - component: {fileID: 5643422288757865355}
   - component: {fileID: 8137351891773924489}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Wheel_Front
   m_TagString: Untagged
   m_Icon: {fileID: 0}

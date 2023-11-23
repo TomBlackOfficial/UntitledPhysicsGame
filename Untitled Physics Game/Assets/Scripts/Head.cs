@@ -9,7 +9,7 @@ public class Head : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collidersToIgnore.Contains(collision.collider))
+        if (IgnoreCollision(collision.collider))
         {
             return;
         }
@@ -17,13 +17,18 @@ public class Head : MonoBehaviour
         player.Die();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collidersToIgnore.Contains(collision))
+        if (IgnoreCollision(collider))
         {
             return;
         }
 
         player.Die();
+    }
+
+    public bool IgnoreCollision(Collider2D collider)
+    {
+        return collidersToIgnore.Contains(collider);
     }
 }
