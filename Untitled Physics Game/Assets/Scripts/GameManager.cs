@@ -8,10 +8,6 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : SingletonTemplate<GameManager>
 {
-    //start and lvl over : create UnityEngine.Random lvl. remove said lvl from list.
-    //round start : vehicle selection : countdown : hide ui
-    //round end : update score : show lvl end ui : instant replay?
-
     #region Variables
     [Header("Level")]
     public List<GameObject> levelPrefabs = new List<GameObject>();
@@ -36,20 +32,10 @@ public class GameManager : SingletonTemplate<GameManager>
     private bool canChangeColor = true;
     private float colorChangeTime = 1f;
     public static event Action<bool> onGameOver;
-    private bool isGameOver;
+    private bool isGameOver, gameStarted;
 
     private bool isPlayerDead;
-
-    public enum LEVEL_STATE
-    {
-        START_GAME,
-        ROUND_START,
-        ROUND_PLAYING,
-        ROUND_END,
-        GAME_OVER
-    }
-    public LEVEL_STATE currentState {  get; private set; }
-    private Coroutine state;
+    
     #endregion
 
     private void OnEnable()
@@ -144,7 +130,6 @@ public class GameManager : SingletonTemplate<GameManager>
         base.Awake();
         InitializeLevels();
         InitializePlayers();
-        InitializeUI();
     }
 
     private void Start()
@@ -152,16 +137,17 @@ public class GameManager : SingletonTemplate<GameManager>
         originalGravity = Physics2D.gravity;
     }
 
-    private void Update()
-    {
-
-    }
-
     public void Play()
     {
+        isGameOver = false;
+        gameStarted = true;
+        AudioManager.instance.UpdateBGM(AudioManager.GAME_STATES.PLAYING);
+
         Physics2D.gravity = originalGravity; 
+
         mainMenu.SetActive(false);
         scorePanel.SetActive(true);
+
         LoadNewLevel();
     }
 
@@ -192,11 +178,6 @@ public class GameManager : SingletonTemplate<GameManager>
         {
                 p2List.Add(p);            
         }
-    }
-    
-    private void InitializeUI()
-    {
-        
     }
 
     private void InitializeLevels()
@@ -246,23 +227,15 @@ public class GameManager : SingletonTemplate<GameManager>
         SceneManager.LoadScene(0);
     }
 
-    public void ChangeLevelState(LEVEL_STATE levelState)
-    {
-    }
 
     private void ActivateUI(GameObject UIToActivate)
     {
         UIToActivate.SetActive(true);
     }
 
-    private void StartCountdown()
+    private IEnumerator Countown()
     {
         TextMeshProUGUI countdown = GameObject.Find("Countdown").GetComponent<TextMeshProUGUI>();
-        state = StartCoroutine(Countown(countdown));
-    }
-
-    private IEnumerator Countown(TextMeshProUGUI countdown)
-    {
         int time = 3, timeToWait = 1;
         while(time > 0)
         {
@@ -309,7 +282,9 @@ public class GameManager : SingletonTemplate<GameManager>
     private void GameOver(bool isP1)
     {
         isGameOver = true;
+        gameStarted = false;
         gameOver.SetActive(true);
+        AudioManager.instance.UpdateBGM(AudioManager.GAME_STATES.MAINMENU);
 
         onGameOver?.Invoke(isP1);
     }

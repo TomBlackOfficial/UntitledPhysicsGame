@@ -9,6 +9,7 @@ public class TextMeshSharpener : MonoBehaviour
 
     private void OnMouseDown()
     {
+        AudioManager.instance.PlayOneShot(AudioManager.AUDIO_CLIPS.OPTION);
         buttonPressed?.Invoke(text);
     }
     /*

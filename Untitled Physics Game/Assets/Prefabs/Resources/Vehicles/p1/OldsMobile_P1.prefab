@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4169631297040550580}
   - component: {fileID: 1673983423543645692}
   - component: {fileID: 3256888102605767873}
+  - component: {fileID: 4473414609007403658}
   m_Layer: 0
   m_Name: Base
   m_TagString: Untagged
@@ -170,6 +171,18 @@ MonoBehaviour:
   frontTire: {fileID: 5643422288757865355}
   speed: 150
   carTorque: 150
+--- !u!114 &4473414609007403658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 783389599249802417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfea8f903514b8141b043201e964e618, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &945269551175087730
 GameObject:
   m_ObjectHideFlags: 0
